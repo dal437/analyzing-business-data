@@ -51,14 +51,43 @@ function constrainDecorator(fn, min, max){
 }
 
 function limitCallsDecorator(fn, n){
-  console.log(n);
-  function amountoftimes (fn, min, max){
-    return function(){
-      const arr = [...arguments];
-      console.log(...arguments);
-    };
-  }
+  let checkforn = n;
+  return function(){
+    if (checkforn > 0) {
+      checkforn--;
+      console.log(fn(...arguments));
+      return fn(...arguments);
+    }
+    else {
+      return undefined;
+    }
+  };
 }
+
+//function filterWith(fn){
+//
+//}
+
+function simpleINIParse(s){
+  const eq = /=/gi;
+  const x = s.trim();
+  const newx = s.replace(eq, ' : ');
+  const newxx = newx.split('\n');
+  console.log(newxx);
+}
+
+
+//function readFileWith(fn){
+//
+//}
+
+//fs.readFile(filename, encoding, callback)
+//function readFileWith(fn){
+//return function(filename, callback)
+//fs.readFile(filename, "utf8", (err, data) => {
+//if err..
+//}
+//}
 
 /*readFileWith(parsingFunction){
   return a function
@@ -80,9 +109,9 @@ module.exports = {
   repeatCall: repeatCall,
   repeatCallAllArgs: repeatCallAllArgs,
   maybe: maybe,
-  constrainDecorator: constrainDecorator
-  //limitCallsDecorator: limitCallsDecorator,
-  /*filterWith: filterWith,
+  constrainDecorator: constrainDecorator,
+  limitCallsDecorator: limitCallsDecorator,
+  //filterWith: filterWith,
   simpleINIParse: simpleINIParse,
-  readFileWith: readFileWith,*/
+  //readFileWith: readFileWith,
 };
