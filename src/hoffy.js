@@ -55,7 +55,6 @@ function limitCallsDecorator(fn, n){
   return function(){
     if (checkforn > 0) {
       checkforn--;
-      console.log(fn(...arguments));
       return fn(...arguments);
     }
     else {
@@ -64,22 +63,59 @@ function limitCallsDecorator(fn, n){
   };
 }
 
-//function filterWith(fn){
-//
-//}
-
-function simpleINIParse(s){
-  const eq = /=/gi;
-  const x = s.trim();
-  const newx = s.replace(eq, ' : ');
-  const newxx = newx.split('\n');
-  console.log(newxx);
+function filterWith(fn){
+  return function(args){
+    return args.filter(fn);
+  };
 }
 
+function simpleINIParse(s){
+  const x = s.trim();
+  const newx = x.split('\n');
+  const Obj = {};
+  const i = 0;
 
-//function readFileWith(fn){
-//
-//}
+  const repeat = function (i) {
+    if (i < newx.length) {
+      if (newx[i].includes("=")){
+        const newarr = newx[i].split("=");
+        Obj[newarr[0]] = newarr[1].trim();
+      }
+      repeat(i+1);
+    }
+  };
+  repeat(i);
+  return Obj;
+}
+  //newx.map(function(ele){
+    //let newarr = [];
+    //newarr.push(...ele);
+    //console.log(newarr);
+    //newarr.split("=");
+    //Obj[ele.key] = ele.value;
+
+  //console.log(newx);
+  //console.log(typeof(newx[0]));
+  //const arr = [];
+  //let i = 0;
+  //if (newx[i].includes('=')){
+    //arr.push(newx[i]);
+    //i++;
+    //console.log(arr);
+  //}
+
+function readFileWith(fn){
+  return function(fileName, callback){
+    const fs = require('fs');
+    fs.readFile(fileName, "utf8", (err, data) => {
+      let parsed;
+      if (!err) {
+        parsed = fn(data);
+      }
+      callback(err, parsed);
+    });
+  };
+}
 
 //fs.readFile(filename, encoding, callback)
 //function readFileWith(fn){
@@ -111,7 +147,7 @@ module.exports = {
   maybe: maybe,
   constrainDecorator: constrainDecorator,
   limitCallsDecorator: limitCallsDecorator,
-  //filterWith: filterWith,
+  filterWith: filterWith,
   simpleINIParse: simpleINIParse,
-  //readFileWith: readFileWith,
+  readFileWith: readFileWith,
 };

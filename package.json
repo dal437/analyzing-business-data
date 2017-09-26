@@ -1,0 +1,31 @@
+{
+  "name": "dal437-homework02",
+  "version": "1.0.0",
+  "description": "Name: Diego Lanao\r NetID: dal437\r Project: Homework #02 - Higher Order Functions",
+  "main": ".eslintrc.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.7.2",
+    "eslint-plugin-mocha": "^4.11.0",
+    "mocha-sinon": "^2.0.0",
+    "sinon": "^3.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyu-csci-ua-0480-003-fall-2017/dal437-homework02.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nyu-csci-ua-0480-003-fall-2017/dal437-homework02/issues"
+  },
+  "homepage": "https://github.com/nyu-csci-ua-0480-003-fall-2017/dal437-homework02#readme"
+}
