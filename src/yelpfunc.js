@@ -69,16 +69,20 @@ function processYelpData(restaurants){
 
 //finds the most common name in dataset
   const nameObj = {};
+  const sortedalpha = [];
+  let Max = 1;
 
-  const sortalpha = restaurants.sort(function(x, y){
-    if(y.name < x.name) {
-      return -1;
+
+  restaurants.forEach(function(ele){
+    if (ele.name) {
+      sortedalpha.push(ele.name);
     }
-    else if(x.name > y.name) {
-      return 1;
+    else {
+      return undefined;
     }
-    console.log(sortalpha);
+    return sortedalpha.sort();
   });
+    //console.log(sortedalpha.sort());
 
   restaurants.forEach(function(ele){
     if (!nameObj.hasOwnProperty(ele.name)){
@@ -88,6 +92,19 @@ function processYelpData(restaurants){
       return nameObj[ele.name] += 1;
     }
   });
+console.log(nameObj);
+console.log(Object.keys(nameObj).length);
+  /*for (let i = 0; i < Object.keys(nameObj).length; i++){
+    if (nameObj[i] > Max){
+      Max = nameObj[i];
+      console.log(nameObj[i]);
+    }
+  }*/
+/*  const nameofKeys = Object.keys(nameObj);
+  for (let i in nameofKeys){
+    console.log(i);
+  }*/
+
   //console.log(nameObj);
 
   //Restaurant count by state
