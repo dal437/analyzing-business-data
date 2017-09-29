@@ -2,7 +2,7 @@
 const yelpfunc = require('./yelpfunc.js');
 const request = require ('request')
 
-request(https://foureyes.github.io/csci-ua.0480-fall2017-003/homework/02/086e27c89913c5c2dde62b6cdd5a27d2.json,
+request('https://foureyes.github.io/csci-ua.0480-fall2017-003/homework/02/086e27c89913c5c2dde62b6cdd5a27d2.json',
 "utf8", function(err, response, body){
   if (err){
     console.log("Sorry" + err);
