@@ -92,18 +92,17 @@ function processYelpData(restaurants){
       return nameObj[ele.name] += 1;
     }
   });
-console.log(nameObj);
-console.log(Object.keys(nameObj).length);
-  /*for (let i = 0; i < Object.keys(nameObj).length; i++){
+
+let Maxrestaurant;
+  for (let i in nameObj){
     if (nameObj[i] > Max){
       Max = nameObj[i];
-      console.log(nameObj[i]);
+      Maxrestaurant = i.toString();
     }
-  }*/
-/*  const nameofKeys = Object.keys(nameObj);
-  for (let i in nameofKeys){
-    console.log(i);
-  }*/
+  }
+  //console.log(Max);
+  //console.log(Maxrestaurant);
+  console.log("* " + Maxrestaurant + ' is the most common business and appears ' + Max + ' times in the dataset');
 
   //console.log(nameObj);
 
