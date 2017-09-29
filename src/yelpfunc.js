@@ -104,13 +104,24 @@ let Maxrestaurant;
   //console.log(Maxrestaurant);
   console.log("* " + Maxrestaurant + ' is the most common business and appears ' + Max + ' times in the dataset');
 
-  //console.log(nameObj);
-
   //Restaurant count by state
-  const restaurantcount = restaurants.map(function(ele){
-    return ele.name;
+  const statesObj = {};
+  let Maxnumber = 1;
+
+
+  restaurants.forEach(function(ele){
+    if (!statesObj.hasOwnProperty(ele.state)){
+      statesObj[ele.state] = 1;
+    }
+    else {
+      return statesObj[ele.state] += 1;
+    }
   });
-  //console.log(restaurantcount);
+  console.log('* Restaurant count by state' + '\n');
+  console.log(statesObj);
 }
+
+
+
 
 module.exports = {processYelpData};
