@@ -62,10 +62,10 @@ function processYelpData(restaurants){
   });
   console.log('* The two highest reviewed Mexican serving restaurants are: ' +
   '\n' + '   * ' + toptwoMexicanplaces[0] + ', ' + orderMexicanplaces[0].city + ' ' +
-  '(' + orderMexicanplaces[0].state + '),' + orderMexicanplaces[0].review_count +
-  '(* ' + orderMexicanplaces[0].stars + ' *)'+ '\n' + '   * ' + toptwoMexicanplaces[1] + ', ' + orderMexicanplaces[1].city +
-  '(' + orderMexicanplaces[1].state + '),' + orderMexicanplaces[1].review_count +
-  '(* ' + orderMexicanplaces[1].stars + ' *)');
+  '(' + orderMexicanplaces[0].state + '), ' + orderMexicanplaces[0].review_count + ' reviews ' +
+  '(* ' + orderMexicanplaces[0].stars + ' stars' + ' *)'+ '\n' + '   * ' + toptwoMexicanplaces[1] + ', ' + orderMexicanplaces[1].city +
+  '(' + orderMexicanplaces[1].state + '), ' + orderMexicanplaces[1].review_count + ' reviews ' +
+  '(* ' + orderMexicanplaces[1].stars + ' stars' + ' *)');
 
 //finds the most common name in dataset
   const nameObj = {};
@@ -117,8 +117,11 @@ let Maxrestaurant;
       return statesObj[ele.state] += 1;
     }
   });
+
   console.log('* Restaurant count by state' + '\n');
-  console.log(statesObj);
+  console.log(statesObj)
+  console.log(statesObj[Object.keys(statesObj)[0]]);
+  console.log(statesObj[Object.keys(statesObj)[1]]);
 }
 
 
