@@ -117,11 +117,8 @@ let Maxrestaurant;
       return statesObj[ele.state] += 1;
     }
   });
-
   console.log('* Restaurant count by state' + '\n');
-  console.log(statesObj)
-  console.log(statesObj[Object.keys(statesObj)[0]]);
-  console.log(statesObj[Object.keys(statesObj)[1]]);
+  console.log(statesObj);
 }
 
 

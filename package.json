@@ -11,6 +11,7 @@
     "eslint": "^4.7.2",
     "eslint-plugin-mocha": "^4.11.0",
     "mocha-sinon": "^2.0.0",
+    "request": "^2.83.0",
     "sinon": "^3.3.0"
   },
   "devDependencies": {},
