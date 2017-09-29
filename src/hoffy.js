@@ -87,22 +87,6 @@ function simpleINIParse(s){
   repeat(i);
   return Obj;
 }
-  //newx.map(function(ele){
-    //let newarr = [];
-    //newarr.push(...ele);
-    //console.log(newarr);
-    //newarr.split("=");
-    //Obj[ele.key] = ele.value;
-
-  //console.log(newx);
-  //console.log(typeof(newx[0]));
-  //const arr = [];
-  //let i = 0;
-  //if (newx[i].includes('=')){
-    //arr.push(newx[i]);
-    //i++;
-    //console.log(arr);
-  //}
 
 function readFileWith(fn){
   return function(fileName, callback){
@@ -116,29 +100,6 @@ function readFileWith(fn){
     });
   };
 }
-
-//fs.readFile(filename, encoding, callback)
-//function readFileWith(fn){
-//return function(filename, callback)
-//fs.readFile(filename, "utf8", (err, data) => {
-//if err..
-//}
-//}
-
-/*readFileWith(parsingFunction){
-  return a function
-  that function does this:
-  // read the file
-  // ^^ requires a callback function
-  //the callback function should
-  // once you have the data//
-  //1. parse data using the arg passed in (parsingFunction or fn)
-  // 2. once you've parsed the data call the callback (whattodoafterparse)
-}
-
-resultingFunction(filename, whattodoafterparse)
-
-callback(err, data)*/
 
 module.exports = {
 	sum: sum,
