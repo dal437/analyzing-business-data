@@ -51,7 +51,7 @@ function processYelpData(restaurants){
       return undefined;
     }
   }, 0);
-;
+
   const orderMexicanplaces = Mexicanplaces.sort(function(x, y){
     return (y.review_count - x.review_count);
   });
@@ -61,7 +61,11 @@ function processYelpData(restaurants){
     return (ele.name);
   });
   console.log('* The two highest reviewed Mexican serving restaurants are: ' +
-  '\n' + '   * ' + toptwoMexicanplaces[0] + '\n' + '   * ' + toptwoMexicanplaces[1]);
+  '\n' + '   * ' + toptwoMexicanplaces[0] + ', ' + orderMexicanplaces[0].city + ' ' +
+  '(' + orderMexicanplaces[0].state + '),' + orderMexicanplaces[0].review_count +
+  '(* ' + orderMexicanplaces[0].stars + ' *)'+ '\n' + '   * ' + toptwoMexicanplaces[1] + ', ' + orderMexicanplaces[1].city +
+  '(' + orderMexicanplaces[1].state + '),' + orderMexicanplaces[1].review_count +
+  '(* ' + orderMexicanplaces[1].stars + ' *)');
 
 //finds the most common name in dataset
   const nameObj = {};
@@ -77,7 +81,7 @@ function processYelpData(restaurants){
   });*/
 
   restaurants.forEach(function(ele){
-    if (ele.name){
+    if (!ele.name){
       nameObj[ele.name] = 1;
     }
     else {

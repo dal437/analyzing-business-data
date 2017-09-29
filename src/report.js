@@ -10,7 +10,6 @@ fs.readFile("C:/Users/Diego/Documents/GitHub/dal437-homework02/tests/business.js
     const stringarr = data.trim();
     const newstringarr = stringarr.split('\n');
 
-    let i = 0;
     const resultsarr = [];
 
     newstringarr.forEach(function(element){
