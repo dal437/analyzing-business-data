@@ -70,7 +70,7 @@ function processYelpData(restaurants){
 //finds the most common name in dataset
   const nameObj = {};
 
-  /*const sortalpha = restaurants.sort(function(x, y){
+  const sortalpha = restaurants.sort(function(x, y){
     if(y.name < x.name) {
       return -1;
     }
@@ -78,10 +78,10 @@ function processYelpData(restaurants){
       return 1;
     }
     console.log(sortalpha);
-  });*/
+  });
 
   restaurants.forEach(function(ele){
-    if (!ele.name){
+    if (!nameObj.hasOwnProperty(ele.name)){
       nameObj[ele.name] = 1;
     }
     else {
